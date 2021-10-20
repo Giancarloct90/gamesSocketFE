@@ -3,5 +3,5 @@ import {
 } from './homeCtrlr';
 
 export const components = {
-    home: home
+    home: home,
 }

@@ -1,0 +1,12 @@
+[x] init porject
+[x] install package
+[x] config webpack file
+[x] config .json file
+[x] config style file sass
+[x] start to code components 
+[x] create class to manage data
+[x] get all games function
+[x] get data from a game
+[x] send data to rest api
+[] make html website insert/vie games
+[] render data DOM

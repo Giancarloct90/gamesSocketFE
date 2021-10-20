@@ -1,0 +1,35 @@
+.navBar {
+    background-color: #46658C;
+
+    .navBarNav {
+        min-height: 10vh;
+        padding: 2rem;
+        width: 85%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .navBarLogo {
+            flex: 1 1 10rem;
+
+            img {
+                width: 3.2rem;
+                cursor: pointer;
+            }
+        }
+
+        .navBarULinks {
+            flex: 1 1 40rem;
+            display: flex;
+            justify-content: space-between;
+
+            li {
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
+
+}

@@ -1,1 +1,189 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+li,
+button,
+label,
+input,
+a,
+p {
+  font-size: 2.4rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3.3rem;
+}
+
+h4,
+h5 {
+  font-size: 2rem;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.navBar {
+  background-color: #46658C;
+}
+
+.navBar .navBarNav {
+  min-height: 10vh;
+  padding: 2rem;
+  width: 85%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navBar .navBarNav .navBarLogo {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 10rem;
+          flex: 1 1 10rem;
+}
+
+.navBar .navBarNav .navBarLogo img {
+  width: 3.2rem;
+  cursor: pointer;
+}
+
+.navBar .navBarNav .navBarULinks {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navBar .navBarNav .navBarULinks li a {
+  color: white;
+}
+
+.tittleHome {
+  width: 95%;
+  margin: auto;
+}
+
+.tittleHome .titleHome {
+  text-align: center;
+  margin: 2rem;
+  font-size: 4rem;
+}
+
+.divHome {
+  width: 95%;
+  margin: auto;
+  min-height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.divHome .form {
+  margin: 1.5rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 10rem;
+          flex: 1 1 10rem;
+  width: 40%;
+  height: 18rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.divHome .form .formNombre,
+.divHome .form .formImage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.divHome .form .formNombre input,
+.divHome .form .formImage input {
+  margin-left: 3rem;
+  width: 100%;
+}
+
+.divHome .form .btnSaveGame {
+  height: 4rem;
+  border: none;
+  background-color: #46658C;
+  color: white;
+  font-size: 2.2rem;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.divHome .form .btnSaveGame:hover {
+  background-color: #537db1;
+  height: 4.3rem;
+}
+
+.divHome .divTableGames {
+  margin: 1.5rem;
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 40rem;
+          flex: 2 1 40rem;
+  width: 100%;
+}
+
+.divHome .divTableGames .tableGames {
+  width: 100%;
+  border-radius: 1rem;
+  font-size: 3rem;
+  border: 1px black;
+}
+
+.divHome .divTableGames .tableGames th {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  background-color: #D93644;
+  color: white;
+  font-size: 2.3rem;
+  padding: 1rem;
+}
+
+.divHome .divTableGames .tableGames td {
+  background-color: #f3eaea;
+  padding: 0.8rem 2.5rem;
+}
+/*# sourceMappingURL=style.css.map */

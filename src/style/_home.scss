@@ -1,0 +1,84 @@
+.tittleHome {
+    width: 95%;
+    margin: auto;
+
+    .titleHome {
+        text-align: center;
+        margin: 2rem;
+        font-size: 4rem;
+    }
+}
+
+.divHome {
+    width: 95%;
+    margin: auto;
+    min-height: 90vh;
+    display: flex;
+
+    .form {
+        margin: 1.5rem;
+        flex: 1 1 10rem;
+        width: 40%;
+        height: 18rem;
+        // background-color: blueviolet;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+
+        .formNombre,
+        .formImage {
+            display: flex;
+
+            input {
+                margin-left: 3rem;
+                width: 100%;
+            }
+        }
+
+        .btnSaveGame {
+            height: 4rem;
+            border: none;
+            background-color: #46658C;
+            color: white;
+            font-size: 2.2rem;
+            cursor: pointer;
+            transition: all 0.2s ease-in;
+
+            &:hover {
+                background-color: #537db1;
+                height: 4.3rem;
+                // width: ;
+            }
+
+        }
+    }
+
+    .divTableGames {
+        margin: 1.5rem;
+        flex: 2 1 40rem;
+        width: 100%;
+        // background-color: brown;
+
+        .tableGames {
+            width: 100%;
+            border-radius: 1rem;
+            font-size: 3rem;
+            border: 1px black;
+
+            th {
+                border-top-left-radius: 1rem;
+                border-top-right-radius: 1rem;
+                background-color: #D93644;
+                color: white;
+                font-size: 2.3rem;
+                padding: 1rem;
+            }
+
+            td {
+                background-color: rgb(243, 234, 234);
+                padding: 0.8rem 2.5rem;
+            }
+        }
+    }
+}
