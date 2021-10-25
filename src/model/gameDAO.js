@@ -24,6 +24,7 @@ export default class GameDAO {
         }
     }
 
+    // TO INSERT A GAME
     async insertGame(nombre, image) {
         let formData = new FormData();
         formData.append('nombre', nombre);
@@ -37,6 +38,24 @@ export default class GameDAO {
             return games;
         } catch (e) {
             console.log('Error insetar juego');
+        }
+    }
+
+    // TO DELETE A GAME
+    async deleteGame(id) {
+        let formData = new FormData();
+        formData.append('id', id);
+        try {
+            let res = await fetch(this.uri, {
+                method: 'PUT',
+                body: formData
+            });
+            let response = await res.json();
+            // console.log(response);
+            return response;
+        } catch (e) {
+            console.log('Error Trying to delete game DAO');
+            return false;
         }
     }
 }

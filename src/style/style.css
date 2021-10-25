@@ -117,7 +117,7 @@ li {
       -ms-flex: 1 1 10rem;
           flex: 1 1 10rem;
   width: 40%;
-  height: 18rem;
+  height: 45rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -140,6 +140,7 @@ li {
 .divHome .form .formImage input {
   margin-left: 3rem;
   width: 100%;
+  padding: 0rem 1rem;
 }
 
 .divHome .form .btnSaveGame {
@@ -185,5 +186,180 @@ li {
 .divHome .divTableGames .tableGames td {
   background-color: #f3eaea;
   padding: 0.8rem 2.5rem;
+  text-align: center;
+}
+
+.btnDetalle,
+.btnEliminar {
+  border: none;
+  border-radius: 0.7rem;
+  color: white;
+  padding: 0.8rem;
+  margin: 0rem 1rem;
+  cursor: pointer;
+}
+
+.btnDetalle {
+  background-color: #46658C;
+}
+
+.btnEliminar {
+  background-color: #F27979;
+}
+
+.image {
+  margin-left: -15px !important;
+  visibility: hidden;
+  display: none;
+}
+
+.lbl1 {
+  margin-right: 1rem;
+}
+
+.lbl2 {
+  margin-right: 1rem;
+  background-color: #F27979;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  width: 20rem;
+  white-space: nowrap;
+  color: white;
+}
+
+.formImage {
+  position: relative;
+}
+
+.fileTxt {
+  margin-left: -10px !important;
+}
+
+.loadingDiv {
+  text-align: center;
+  width: 100%;
+}
+
+.loadingDiv img {
+  height: 10.5rem;
+  margin-top: 6rem;
+}
+
+.notiDiv {
+  width: 100%;
+  text-align: center;
+  margin-top: 6rem;
+}
+
+.notiDiv .notiDivDiv {
+  display: none;
+  background-color: red;
+  width: 30%;
+  margin: auto;
+  min-height: 5vh;
+  padding: 2rem 0rem;
+  border-radius: 0.8rem;
+  position: relative;
+}
+
+.notiDiv .notiDivDiv .closeBtn {
+  font-size: 2.6rem;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+}
+
+.notiDiv .notiDivDiv label {
+  color: white;
+}
+
+.imgPreview {
+  max-width: 30rem;
+  max-height: 30rem;
+}
+
+.modalUpdate {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modalUpdate .modal {
+  width: 50%;
+  height: 60%;
+  background-color: white;
+  border-radius: 0.8rem;
+  padding: 3rem;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+}
+
+.modalUpdate .modal .modalContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modalUpdate .modal .modalContent .divInputImageModal {
+  margin-bottom: 1rem;
+}
+
+.modalUpdate .modal .modalContent .fileTxt2 {
+  margin-left: 3rem;
+  margin-left: -11px !important;
+  width: 18.5rem;
+  height: 3.7rem;
+  padding: 0rem 1rem;
+}
+
+.modalUpdate .modal .modalContent .divContentText {
+  margin-left: 2.5rem;
+}
+
+.modalUpdate .modal .modalContent .divContentText textarea {
+  margin-top: 2rem;
+  height: 25rem;
+}
+
+.modalUpdate .modal .imgModal {
+  width: 100%;
+}
+
+.modalUpdate .divBtnModal {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modalUpdate .btnUpdateModal {
+  width: 50%;
+  margin-right: 1rem;
+  border: none;
+  border-radius: 0.7rem;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  padding: 0.8rem;
+}
+
+.modalUpdate .btnCancelModal {
+  width: 50%;
+  border: none;
+  border-radius: 0.7rem;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  padding: 0.8rem;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

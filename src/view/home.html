@@ -13,10 +13,14 @@
         </div>
 
         <div class="formImage">
-            <label for="image">Imagen</label>
-            <input type="file" id="image" name="image"><br>
+            <!-- <label for="image" id="lbl1" class="lbl1">Imagen</label> -->
+            <label for="image" id="lbl2" class="lbl2">Subir Imagen <img src="../asset/icon/upload.png" alt=""></label>
+            <input type="file" id="image" name="image" class="image">
+            <input for="image" type="text" id="fileTxt" class="fileTxt"> <br>
         </div>
         <button class="btnSaveGame" id="btnSaveGame">SALVAR JUEGO</button>
+
+        <img src="../asset/icon/transImage.png" alt="" class="imgPreview" id="imgPreview">
     </div>
 
     <!-- TABLE -->
@@ -40,5 +44,41 @@
                 <td>Actulizar/Borrar</td>
             </tr> -->
         </table>
+        <div class="notiDiv">
+            <div class="notiDivDiv" id="notiDivDiv">
+                <label id="lblNoti" for="">TESTING</label>
+                <span class="closeBtn" id="closeBtn">&times;</span>
+            </div>
+        </div>
+        <div class="loadingDiv" id="loadingDiv">
+            <img src="../asset/icon/load.gif" alt="">
+        </div>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modalUpdate">
+        <div class="modal">
+            <h1 class="modalTitle"></h1>
+            <div class="modalContent">
+                <div class="divContentImg">
+                    <div class="divInputImageModal">
+                        <label for="image" id="lbl2" class="lbl2">Subir Imagen <img src="../asset/icon/upload.png"
+                                alt=""></label>
+                        <input type="file" id="image" name="image" class="image">
+                        <input for="image" type="text" id="fileTxt2" class="fileTxt2">
+                    </div>
+                    <img src="../asset/icon/test.jpg" class="imgModal" id="imgModal" alt="">
+                </div>
+                <div class="divContentText">
+                    <input type="text" class="nameModal" id="nameModal" value="Mario">
+                    <textarea name="textAreaModal" id="textAreaModal" cols="37"
+                        rows="10">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, consectetur corrupti? Assumenda asperiores ducimus commodi ratione ex? Labore, ullam cum.</textarea>
+                </div>
+            </div>
+            <div class="divBtnModal">
+                <button class="btnUpdateModal">Actulizar</button>
+                <button class="btnCancelModal">Cancelar</button>
+            </div>
+        </div>
     </div>
 </div>

@@ -6,7 +6,9 @@
 [x] start to code components 
 [x] create class to manage data
 [x] get all games function
-[x] get data from a game
 [x] send data to rest api
-[] make html website insert/vie games
-[] render data DOM
+[x] make html website insert/vie games
+[x] render data DOM
+[x] delete game
+[] create modal
+[] get data from a game
