@@ -7,10 +7,11 @@ export const home = async () => {
     // INIT COMPONENTS
     let div = document.createElement('div');
     div.innerHTML = view;
-    const btnSaveGame = div.querySelector('#btnSaveGame');
+
     // VARIABLES
+    const btnSaveGame = div.querySelector('#btnSaveGame');
     const nombre = div.querySelector('#nombre');
-    const image = div.querySelector('#image');
+    const image = div.querySelector('#iImageForm');
     const tbody = div.querySelector('#tbody');
     const loadingDiv = div.querySelector('#loadingDiv');
     const notiDivDiv = div.querySelector('#notiDivDiv');
@@ -18,20 +19,97 @@ export const home = async () => {
     const lblNoti = div.querySelector('#lblNoti');
     const fileTxt = div.querySelector('#fileTxt');
     const imgPreview = div.querySelector('#imgPreview');
+    const modalUpdate = div.querySelector('#modalUpdate');
+    const btnCancelModal = div.querySelector('#btnCancelModal');
+    const iImageModal = div.querySelector('#iImageModal');
+    const iFileTextModal = div.querySelector('#iFileTextModal');
+    const iPreviewImg = div.querySelector('#iPreviewImg');
+    const iNAmeModal = div.querySelector('#iNAmeModal');
+    const ibtnUpdateModal = div.querySelector('#ibtnUpdateModal');
+    const iDivNotyValidate = div.querySelector('#iDivNotyValidate');
 
-    // ADD EVENT LISTNER BUTTON TO CLICK
+    // **********EVENTS LISTNER**********
+    // TO SAVE A NEW GAME
     btnSaveGame.addEventListener('click', async () => {
+        iDivNotyValidate.style.display = 'none';
+        aniMove();
         let res = await gameDAO.insertGame(nombre.value, image.files[0]);
         // console.log(res);
         if (!res.ok) {
+            if (res.validate) {
+                return notyValidate(res.message);
+            }
             return notifier('Error to Insert', 'red');
         }
-        tbody.innerHTML = '';
-        loadingDiv.style.display = 'block';
-        initGames();
+        // tbody.innerHTML = '';
+        // loadingDiv.style.display = 'block';
+        await initGames();
         nombre.value = '';
         fileTxt.value = '';
+        imgPreview.src = 'http://res.cloudinary.com/ddnzwfrmo/image/upload/v1635884762/bxttupkri7u2nfxzz3oi.png';
     });
+
+    // CANCEL MODAL, CLOSE MODAL
+    btnCancelModal.addEventListener('click', () => {
+        modalUpdate.style.display = 'none';
+    });
+
+    // BTN TO UPDATE A GAME
+    ibtnUpdateModal.addEventListener('click', async element => {
+        // console.log('hello');
+        // console.log(ibtnUpdateModal.getAttribute("idGame"));
+        try {
+            let res = await gameDAO.updateAGame(ibtnUpdateModal.getAttribute("idGame"), iNAmeModal.value, iImageModal.files[0]);
+            if (!res.ok) {
+                modalUpdate.style.display = 'none';
+                return notifier('Error al actulizar', 'red');
+            }
+            console.log(res);
+            modalUpdate.style.display = 'block';
+            initGames();
+        } catch (e) {
+            // console.log(e);
+            modalUpdate.style.display = 'none';
+            return notifier('Error al actulizar', 'red');
+        }
+    });
+
+    // CLOSE SPAN TAG
+    closeBtn.addEventListener('click', () => {
+        notiDivDiv.style.display = 'none';
+    });
+
+    // TO PUT NAME IN INPUT TXT FROM FILE INPUT
+    image.addEventListener('change', () => {
+        iDivNotyValidate.style.display = 'none';
+        fileTxt.value = image.value.split("\\").at(-1);
+        const [file] = image.files;
+        imgPreview.src = URL.createObjectURL(file);
+    });
+
+    // IMAGE MODAL
+    iImageModal.addEventListener('change', () => {
+        iFileTextModal.value = iImageModal.value.split("\\").at(-1);
+        const [file] = iImageModal.files;
+        iPreviewImg.src = URL.createObjectURL(file);
+    });
+
+    // **********************************
+
+    // **********FUNCTIONS****************
+    // NOTYVALIDATE
+    const notyValidate = async (message) => {
+        console.log(message);
+        iDivNotyValidate.innerHTML = '';
+        for (let index = 0; index < message.length; index++) {
+            let li = document.createElement('li');
+            li.innerHTML = message[index];
+            iDivNotyValidate.appendChild(li);
+        }
+
+        iDivNotyValidate.style.display = 'block';
+        await initGames();
+    }
 
     // TO RENDER GAMES 
     const renderGames = async (games) => {
@@ -54,15 +132,24 @@ export const home = async () => {
         loadingDiv.style.display = 'none';
         let btnDeletes = document.querySelectorAll('#btnEliminar');
 
-        // let btnActulizar = document.querySelectorAll('#btnActulizar');
+        // BTN UPDATE AND DELETE
         btnDeletes.forEach(element => {
             element.addEventListener('click', async () => {
-                // console.log(element.getAttribute('mode'), element.getAttribute('idGame'));
+
+                // UPDATE
                 if (element.getAttribute('mode') === 'A') {
-                    // Actulizar
                     console.log('Actulizar', element.getAttribute('idGame'));
+
+                    let oneGame = await gameDAO.getOneGame(element.getAttribute('idGame'));
+                    // console.log(oneGame);
+                    if (!oneGame.ok) {
+                        return console.log(oneGame.message);
+                    }
+
+                    showModal(oneGame.gamesDB);
+
+                    // DELETE FUNCTION
                 } else if (element.getAttribute('mode') === 'D') {
-                    // DELETE
                     console.log('Borrar', element.getAttribute('idGame'));
                     try {
                         let res = await gameDAO.deleteGame(element.getAttribute('idGame'));
@@ -78,23 +165,33 @@ export const home = async () => {
         });
     }
 
+    // SHOW MODAL 
+    const showModal = (game) => {
+        modalUpdate.style.display = 'block';
+        console.log('modal', game);
+        ibtnUpdateModal.setAttribute("idGame", game._id);
+        iNAmeModal.value = game.nombre;
+        iPreviewImg.src = game.imagen;
+    }
+
     // NOTIFY ERROR WHEN DATA FAIL
     const notifier = (msj, color) => {
+        tbody.innerHTML = '';
         loadingDiv.style.background = color
         loadingDiv.style.display = 'none'
         lblNoti.innerHTML = msj;
         notiDivDiv.style.display = 'block';
     }
 
-    // CLOSE SPAN TAG
-    closeBtn.addEventListener('click', () => {
-        notiDivDiv.style.display = 'none';
-    });
+    // INIT ANIMATION 
+    const aniMove = async () => {
+        tbody.innerHTML = '';
+        loadingDiv.style.display = 'block';
+    }
 
     // GET ALL GAMES
     const initGames = async () => {
-        tbody.innerHTML = '';
-        loadingDiv.style.display = 'block';
+        aniMove();
         try {
             let res = await gameDAO.getAllGames();
             // console.log(res);
@@ -108,15 +205,9 @@ export const home = async () => {
         }
     }
 
-    // TO PUT NAME IN INPUT TXT FROM FILE INPUT
-    image.addEventListener('change', () => {
-        // console.log(console.log(image.files));
-        // console.log(console.log(image.files.name));
-        fileTxt.value = image.value.split("\\").at(-1);
-        const [file] = image.files
-        imgPreview.src = URL.createObjectURL(file);
-    })
+    // **********************************
 
+    // INIT ALL
     initGames();
 
     return div;

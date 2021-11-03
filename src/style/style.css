@@ -117,7 +117,7 @@ li {
       -ms-flex: 1 1 10rem;
           flex: 1 1 10rem;
   width: 40%;
-  height: 45rem;
+  height: 50rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -277,11 +277,12 @@ li {
 }
 
 .imgPreview {
-  max-width: 30rem;
+  width: 100%;
   max-height: 30rem;
 }
 
 .modalUpdate {
+  display: none;
   height: 100%;
   width: 100%;
   position: fixed;
@@ -292,7 +293,7 @@ li {
 
 .modalUpdate .modal {
   width: 50%;
-  height: 60%;
+  height: auto;
   background-color: white;
   border-radius: 0.8rem;
   padding: 3rem;
@@ -316,18 +317,32 @@ li {
 .modalUpdate .modal .modalContent .fileTxt2 {
   margin-left: 3rem;
   margin-left: -11px !important;
-  width: 18.5rem;
+  width: 16rem;
   height: 3.7rem;
   padding: 0rem 1rem;
 }
 
 .modalUpdate .modal .modalContent .divContentText {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
   margin-left: 2.5rem;
 }
 
 .modalUpdate .modal .modalContent .divContentText textarea {
   margin-top: 2rem;
-  height: 25rem;
+  height: 28rem;
+  width: 100%;
+}
+
+.modalUpdate .modal .modalContent .divContentText .nameModal {
+  width: 100%;
+}
+
+.modalUpdate .modal .modalContent .divContentImg {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
 }
 
 .modalUpdate .modal .imgModal {
@@ -350,6 +365,7 @@ li {
   color: white;
   font-weight: bold;
   padding: 0.8rem;
+  cursor: pointer;
 }
 
 .modalUpdate .btnCancelModal {
@@ -361,5 +377,30 @@ li {
   font-weight: bold;
   padding: 0.8rem;
   cursor: pointer;
+}
+
+.divNotyValidate {
+  background-color: red;
+  border-radius: 0.8rem;
+  padding: 2rem;
+  color: white;
+  height: 20rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  top: 62%;
+  display: none;
+}
+
+.divNotyValidate li {
+  margin-bottom: 1rem;
 }
 /*# sourceMappingURL=style.css.map */

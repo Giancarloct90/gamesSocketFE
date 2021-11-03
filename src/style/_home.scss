@@ -19,7 +19,7 @@
         margin: 1.5rem;
         flex: 1 1 10rem;
         width: 40%;
-        height: 45rem;
+        height: 50rem;
         // background-color: blueviolet;
         display: flex;
         flex-direction: column;
@@ -179,13 +179,13 @@
 }
 
 .imgPreview {
-    max-width: 30rem;
+    width: 100%;
     max-height: 30rem;
 }
 
 // MODAL STYLE
 .modalUpdate {
-
+    display: none;
     height: 100%;
     width: 100%;
     position: fixed;
@@ -195,7 +195,7 @@
 
     .modal {
         width: 50%;
-        height: 60%;
+        height: auto;
         background-color: white;
         border-radius: 0.8rem;
         padding: 3rem;
@@ -215,19 +215,34 @@
             .fileTxt2 {
                 margin-left: 3rem;
                 margin-left: -11px !important;
-                width: 18.5rem;
+                width: 16rem;
                 height: 3.7rem;
                 padding: 0rem 1rem;
             }
 
             .divContentText {
+                flex: 1 1 40rem;
+                // background-color: blue;
+                // width: 100%;
                 // height: ;
                 margin-left: 2.5rem;
 
                 textarea {
                     margin-top: 2rem;
-                    height: 25rem;
+                    height: 28rem;
+                    width: 100%;
                 }
+
+                .nameModal {
+                    width: 100%;
+                }
+            }
+
+            .divContentImg {
+                flex: 1 1 40rem;
+                // width: 100%;
+                // background-color: chocolate;
+
             }
 
         }
@@ -251,6 +266,7 @@
         color: white;
         font-weight: bold;
         padding: 0.8rem;
+        cursor: pointer;
     }
 
     .btnCancelModal {
@@ -264,4 +280,22 @@
         cursor: pointer;
     }
 
+}
+
+.divNotyValidate {
+    background-color: red;
+    border-radius: 0.8rem;
+    padding: 2rem;
+    color: white;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 62%;
+    display: none;
+
+    li {
+        margin-bottom: 1rem;
+    }
 }
