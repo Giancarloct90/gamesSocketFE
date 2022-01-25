@@ -1,42 +1,57 @@
 <!-- TITTLE -->
 <div class="tittleHome">
-    <h1 class="titleHome">VOTOS JUEGOS</h1>
+  <h1 class="titleHome">VOTOS JUEGOS</h1>
 </div>
 
 <div class="divHome">
-
-    <!-- FORM -->
-    <div class="form">
-        <div class="formNombre">
-            <label for="nombre">Nombre</label>
-            <input type="text" name='nombre' id='nombre' autocomplete="off"><br>
-        </div>
-
-        <div class="formImage">
-            <!-- <label for="image" id="lbl1" class="lbl1">Imagen</label> -->
-            <label for="iImageForm" id="lbl2" class="lbl2">Subir Imagen <img src="../asset/icon/upload.png"
-                    alt=""></label>
-            <input type="file" typeForm="F" id="iImageForm" name="image" class="image">
-            <input for="image" type="text" id="fileTxt" class="fileTxt"> <br>
-        </div>
-        <button class="btnSaveGame" id="btnSaveGame">SALVAR JUEGO</button>
-
-        <img src="../asset/icon/transImage.png" alt="" class="imgPreview" id="imgPreview">
+  <!-- FORM -->
+  <div class="form">
+    <div class="formNombre">
+      <label for="nombre">Nombre</label>
+      <input
+        type="text"
+        name="nombre"
+        id="nombre"
+        class="nombre"
+        autocomplete="off"
+      /><br />
     </div>
 
-    <!-- TABLE -->
-    <div class="divTableGames">
-        <table class="tableGames">
-            <thead>
-                <tr class="1tr">
-                    <th>NOMBRE</th>
-                    <th>ACCIONES</th>
-                </tr>
-            </thead>
-            <tbody class="tbody" id="tbody">
+    <div class="formImage">
+      <!-- <label for="image" id="lbl1" class="lbl1">Imagen</label> -->
+      <label for="iImageForm" id="lbl2" class="lbl2"
+        >Subir Imagen <img src="../asset/icon/upload.png" alt=""
+      /></label>
+      <input
+        type="file"
+        typeForm="F"
+        id="iImageForm"
+        name="image"
+        class="image"
+      />
+      <input for="image" type="text" id="fileTxt" class="fileTxt" /> <br />
+    </div>
+    <button class="btnSaveGame" id="btnSaveGame">SALVAR JUEGO</button>
 
-            </tbody>
-            <!-- <tr>
+    <img
+      src="../asset/icon/transImage.png"
+      alt=""
+      class="imgPreview"
+      id="imgPreview"
+    />
+  </div>
+
+  <!-- TABLE -->
+  <div class="divTableGames">
+    <table class="tableGames">
+      <thead>
+        <tr class="1tr">
+          <th>NOMBRE</th>
+          <th>ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody class="tbody" id="tbody"></tbody>
+      <!-- <tr>
                     <td>hello</td>
                     <td>Actulizar/Borrar</td>
                 </tr>
@@ -44,47 +59,49 @@
                     <td>hello</td>
                 <td>Actulizar/Borrar</td>
             </tr> -->
-        </table>
-        <div class="notiDiv">
-            <div class="notiDivDiv" id="notiDivDiv">
-                <label id="lblNoti" for="">TESTING</label>
-                <span class="closeBtn" id="closeBtn">&times;</span>
-            </div>
-        </div>
-        <div class="loadingDiv" id="loadingDiv">
-            <img src="../asset/icon/load.gif" alt="">
-        </div>
+    </table>
+    <div class="notiDiv">
+      <div class="notiDivDiv" id="notiDivDiv">
+        <label id="lblNoti" for="">TESTING</label>
+        <span class="closeBtn" id="closeBtn">&times;</span>
+      </div>
     </div>
+    <div class="loadingDiv" id="loadingDiv">
+      <img src="../asset/icon/load.gif" alt="" />
+    </div>
+  </div>
 
-    <!-- MODAL -->
-    <div class="modalUpdate" id="modalUpdate">
-        <div class="modal">
-            <h1 class="modalTitle"></h1>
-            <div class="modalContent">
-                <div class="divContentImg">
-                    <div class="divInputImageModal">
-                        <label for="iImageModal" id="iLblModal" class="lbl2">Subir Imagen <img
-                                src="../asset/icon/upload.png" alt=""></label>
-                        <input type="file" typeForm="M" id="iImageModal" name="image" class="image">
-                        <input for="image" type="text" id="iFileTextModal" class="fileTxt2">
-                    </div>
-                    <img src="../asset/icon/test.jpg" class="imgModal" id="iPreviewImg" alt="">
-                </div>
-                <div class="divContentText">
-                    <input type="text" class="nameModal" id="iNAmeModal">
-                    <textarea name="textAreaModal" id="textAreaModal" cols="37"
-                        rows="10">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, consectetur corrupti? Assumenda asperiores ducimus commodi ratione ex? Labore, ullam cum.</textarea>
-                </div>
+  <!-- MODAL -->
+  <div class="modalUpdate" id="modalUpdate">
+    <div class="modal">
+      <h1 class="modalTitle"></h1>
+      <div class="modalContent">
+        <div class="divContentImg">
+          <div class="divInputImageModal">
+            <div class="divLabel">
+              <label for="iImageModal" id="iLblModal" class="lbl2">Subir Imagen <img src="../asset/icon/upload.png" alt=""/></label>
+              <input  type="text" id="iFileTextModal" class="fileTxt2" value=""/>
             </div>
-            <div class="divBtnModal">
-                <button id="ibtnUpdateModal" class="btnUpdateModal">Actulizar</button>
-                <button id="btnCancelModal" class="btnCancelModal">Cancelar</button>
-            </div>
+            <input type="file" typeForm="M" id="iImageModal" name="image" class="image"/>
+          </div>
+          <img src="../asset/icon/test.jpg" class="imgModal" id="iPreviewImg" alt=""/>
         </div>
+        <div class="divContentText">
+          <input type="text" class="nameModal" id="iNAmeModal" />
+          <textarea name="textAreaModal" id="textAreaModal" cols="37" rows="10">
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, consectetur corrupti? Assumenda asperiores ducimus commodi ratione ex? Labore, ullam cum.</textarea
+          >
+        </div>
+      </div>
+      <div class="divBtnModal">
+        <button id="ibtnUpdateModal" class="btnUpdateModal">Actulizar</button>
+        <button id="btnCancelModal" class="btnCancelModal">Cancelar</button>
+      </div>
     </div>
+  </div>
 
-    <div class="divNotyValidate" id="iDivNotyValidate">
-        <!-- <li>No se puede usar casco en casa</li> -->
-        <!-- <li>no se piuede tomar y manejar</li> -->
-    </div>
+  <div class="divNotyValidate" id="iDivNotyValidate">
+    <!-- <li>No se puede usar casco en casa</li> -->
+    <!-- <li>no se piuede tomar y manejar</li> -->
+  </div>
 </div>

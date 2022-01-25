@@ -28,6 +28,7 @@ export const home = async () => {
     const ibtnUpdateModal = div.querySelector('#ibtnUpdateModal');
     const iDivNotyValidate = div.querySelector('#iDivNotyValidate');
 
+
     // **********EVENTS LISTNER**********
     // TO SAVE A NEW GAME
     btnSaveGame.addEventListener('click', async () => {
@@ -52,6 +53,7 @@ export const home = async () => {
     // CANCEL MODAL, CLOSE MODAL
     btnCancelModal.addEventListener('click', () => {
         modalUpdate.style.display = 'none';
+        iFileTextModal.value = "";
     });
 
     // BTN TO UPDATE A GAME
@@ -65,8 +67,10 @@ export const home = async () => {
                 return notifier('Error al actulizar', 'red');
             }
             console.log(res);
-            modalUpdate.style.display = 'block';
+            modalUpdate.style.display = 'none';
             initGames();
+            iFileTextModal.value = "";
+
         } catch (e) {
             // console.log(e);
             modalUpdate.style.display = 'none';
@@ -74,9 +78,10 @@ export const home = async () => {
         }
     });
 
-    // CLOSE SPAN TAG
+    // CLOSE SPAN TAG NOTIFIER
     closeBtn.addEventListener('click', () => {
         notiDivDiv.style.display = 'none';
+        initGames();
     });
 
     // TO PUT NAME IN INPUT TXT FROM FILE INPUT
@@ -181,6 +186,7 @@ export const home = async () => {
         loadingDiv.style.display = 'none'
         lblNoti.innerHTML = msj;
         notiDivDiv.style.display = 'block';
+
     }
 
     // INIT ANIMATION 

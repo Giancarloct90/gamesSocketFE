@@ -13,8 +13,15 @@ export const routes = async (route) => {
         case '#/':
             contentDiv.appendChild(await components.home());
             break;
-        case '#/Game':
-            contentDiv.appendChild(await components.game());
+            // case '#/Game':
+            //     contentDiv.appendChild(await components.game());
+            //     break;
+        case '#/Votar':
+            contentDiv.appendChild(await components.votar());
+            break;
+
+        case '#/Conteo':
+            contentDiv.appendChild(await components.conteo());
             break;
     }
 }

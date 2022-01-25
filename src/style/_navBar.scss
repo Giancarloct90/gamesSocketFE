@@ -1,35 +1,78 @@
+.burger {
+  display: none;
+
+  .line1,
+  .line2,
+  .line3 {
+    background-color: white;
+    height: 0.7rem;
+    width: 5rem;
+    margin: 0.5rem 0rem;
+    transition: all 0.5s ease-in-out;
+
+  }
+}
+
 .navBar {
-    background-color: #46658C;
+  background-color: #46658c;
 
-    .navBarNav {
-        min-height: 10vh;
-        padding: 2rem;
-        width: 85%;
-        margin: auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  .navBarNav {
+    min-height: 10vh;
+    padding: 2rem;
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        .navBarLogo {
-            flex: 1 1 10rem;
+    .socketStatus {
+      flex: 0 1 5rem;
+      display: flex;
+      justify-content: flex-end;
 
-            img {
-                width: 3.2rem;
-                cursor: pointer;
-            }
-        }
-
-        .navBarULinks {
-            flex: 1 1 40rem;
-            display: flex;
-            justify-content: space-between;
-
-            li {
-                a {
-                    color: white;
-                }
-            }
-        }
+      .cServerStatus {
+        width: 1.3rem;
+        height: 1.3rem;
+        background-color: red;
+      }
     }
 
+    .navBarLogo {
+      flex: 1 1 10rem;
+
+      img {
+        width: 3.2rem;
+        cursor: pointer;
+      }
+    }
+
+    .navBarULinks {
+      flex: 1 1 40rem;
+      display: flex;
+      justify-content: space-between;
+      transition: all 0.8s ease-in-out;
+
+      li {
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+
+  .navBarAnimation {
+    transform: translateX(0%);
+  }
+
+  .toggle .line1 {
+    transform: rotate(45deg) translate(1.3rem, 1rem);
+  }
+
+  .toggle .line2 {
+    opacity: 0;
+  }
+
+  .toggle .line3 {
+    transform: rotate(-45deg) translate(1.3rem, -1rem);
+  }
 }

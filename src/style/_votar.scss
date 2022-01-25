@@ -1,0 +1,71 @@
+.votarSection {
+    width: 90%;
+    margin: auto;
+
+    .titleDiv {
+        text-align: center;
+        margin: 4rem 0rem;
+
+        h1 {
+            font-size: 4rem;
+        }
+    }
+
+    .buscarDiv {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 3rem;
+
+        .txtBuscarAGame {
+            width: 50%;
+            border-radius: 0.8rem;
+            padding: 1rem 3rem;
+        }
+    }
+
+    .cardsDiv {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0.7rem;
+        // background-color: blanchedalmond;
+        justify-content: space-around;
+
+        .cardDiv {
+            flex: 0 1 10rem;
+            height: auto;
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+            // background-color: royalblue;
+            margin: 1rem;
+
+            .cardImgVotar {
+                width: 25rem;
+                height: 22rem;
+
+                .img1 {
+                    width: 100%;
+                    min-height: 22rem;
+                }
+            }
+
+            .cardContent {
+                text-align: center;
+                padding: 1rem;
+
+                .btnVotar {
+                    width: 95%;
+                    border: none;
+                    border-radius: 0.5rem;
+                    background-color: royalblue;
+                    color: white;
+                    padding: 0.5rem;
+                    cursor: pointer;
+                }
+
+                h3,
+                button {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}

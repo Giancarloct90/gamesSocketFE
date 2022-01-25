@@ -1,12 +1,13 @@
 export default class GameDAO {
     constructor() {
-        this.uri = 'http://localhost:3000/API';
+        // this.uri = 'http://localhost:3000/API';
+        this.uri = 'http://192.168.0.5:3000';
     }
 
     // TO GET ALL GAMES
     async getAllGames() {
         try {
-            let response = await fetch(`${this.uri}/games`);
+            let response = await fetch(`${this.uri}/API/games`);
             let games = await response.json();
             if (!games.ok) {
                 return {
@@ -30,7 +31,7 @@ export default class GameDAO {
         formData.append('nombre', nombre);
         formData.append('image', image);
         try {
-            let response = await fetch(`${this.uri}/games`, {
+            let response = await fetch(`${this.uri}/API/games`, {
                 method: 'POST',
                 body: formData
             });
@@ -47,7 +48,7 @@ export default class GameDAO {
         let formData = new FormData();
         formData.append('id', id);
         try {
-            let res = await fetch(`${this.uri}/games`, {
+            let res = await fetch(`${this.uri}/API/games`, {
                 method: 'PUT',
                 body: formData
             });
@@ -63,7 +64,7 @@ export default class GameDAO {
     // TO GET A GAME 
     async getOneGame(id) {
         try {
-            let res = await fetch(`${this.uri}/games/${id}`);
+            let res = await fetch(`${this.uri}/API/games/${id}`);
             let response = await res.json();
             return response;
         } catch (e) {
@@ -80,10 +81,10 @@ export default class GameDAO {
     async updateAGame(id, nombre, image) {
         try {
             let formData = new FormData();
-            formData.append("id", "45");
+            formData.append("id", id);
             formData.append("nombre", nombre);
             formData.append('image', image);
-            let res = await fetch(`${this.uri}/gamesUpdate`, {
+            let res = await fetch(`${this.uri}/API/gamesUpdate`, {
                 method: 'POST',
                 body: formData
             });

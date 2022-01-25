@@ -4,6 +4,163 @@ $header3: 3.3rem;
 $header4: 2rem;
 $text: 2.4rem;
 
-@import 'global';
-@import 'navBar';
-@import 'home';
+@import "global";
+@import "navBar";
+@import "home";
+@import "votar";
+@import "conteo";
+
+// MEDIA QUERIES
+@media screen and (max-width: 754px) {
+  html {
+    font-size: 42.5%;
+  }
+
+  // NAVBAR
+
+  .navBarLogo {
+    flex: 1 1 10rem;
+
+    // background-color: aqua;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+
+    img {
+      height: 6rem;
+    }
+  }
+
+  .socketStatus {
+    flex: 1 1 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .burger {
+    flex: 1 1 10rem;
+    // background-color: aqua;s
+    display: inline-block;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+
+  .navBarULinks {
+    z-index: 4;
+    position: fixed;
+    transform: translateX(100%);
+    top: 9vh;
+    right: 0vh;
+    width: 60%;
+    height: 91vh;
+    background-color: #46658c;
+    display: flex;
+    padding: 10rem;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: space-around;
+  }
+
+  // HOME
+
+  .btnDetalle,
+  .btnEliminar {
+    width: 15rem;
+    margin: 0.5rem 0rem;
+  }
+
+  .divHome {
+
+    .form,
+    .divTableGames {
+      width: 80%;
+    }
+
+    flex-wrap: wrap;
+
+    .modal {
+      width: 90%;
+    }
+  }
+
+  // MODAL
+
+  #iFileTextModal {
+    // display: none;
+    width: 1rem;
+    // background-color: aqua;
+    height: 4rem;
+    margin-top: 0.8rem;
+    margin-left: 0rem;
+  }
+
+  #iLblModal,
+  #iFileTextModal {
+    width: 100%;
+  }
+
+  .divLabel {
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    img {
+      height: 2rem;
+    }
+  }
+
+
+
+  #iNAmeModal,
+  #textAreaModal {
+    width: 97%;
+  }
+
+  // VOTAR PAGE
+
+
+  .cardsDiv {
+    justify-content: space-around;
+
+    .cardDiv {
+      width: 22rem;
+
+      .cardImgVotar {
+        max-width: 100%;
+
+        .img1 {
+          object-fit: fill;
+        }
+      }
+    }
+  }
+
+
+  // CONTEO PAGE
+  .txtFind2 {
+    width: 30rem;
+    // display: none;
+  }
+
+  .cards {
+    justify-content: space-around;
+
+    .card {
+      // flex: 0 1 50rem;
+      // min-width: 23rem;
+
+      .cardImg {
+        max-width: 100%;
+
+        img {
+
+          object-fit: fill;
+        }
+      }
+    }
+  }
+
+
+}

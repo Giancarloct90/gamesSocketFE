@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../src/asset/icon/logoICO.png" />
+    <title>Game | Vote</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
+  <body>
     <header class="navBar">
-        <nav class="navBarNav">
-            <div class="navBarLogo">
-                <img src="./asset/icon/logo.png" alt="">
-            </div>
-            <ul class="navBarULinks">
-                <li><a href="">HOME</a></li>
-                <li><a href="">VOTAR</a></li>
-                <li><a href="">CONTEO</a></li>
-            </ul>
-        </nav>
+      <nav class="navBarNav">
+        <div class="navBarLogo">
+          <img src="./asset/icon/logo.png" alt="" />
+        </div>
+
+        <ul class="navBarULinks" id="navBarULinks">
+          <li><a href="">HOME</a></li>
+          <li><a href="#/Votar">VOTAR</a></li>
+          <li><a href="#/Conteo">CONTEO</a></li>
+        </ul>
+
+        <div class="socketStatus">
+          <div class="cServerStatus" id="iServerStatus"></div>
+          <!-- <div class="test">hello</div> -->
+        </div>
+
+        <div class="burger" id="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
     </header>
 
     <div id="contentDiv"></div>
-
-</body>
-
+  </body>
 </html>
